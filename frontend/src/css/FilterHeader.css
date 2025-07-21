@@ -1,0 +1,58 @@
+.header-container {
+  text-align: center;
+  padding: 20px 0;
+  background: #f7f9fc;
+  border-bottom: 1px solid #ddd;
+}
+.main-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f2937;
+}
+.main-heading span {
+  border-bottom: 3px solid #fb923c;
+}
+.sub-heading {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #555;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.search-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  min-width: 250px;
+}
+.dropdown {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.filter-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #eee;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: #6366f1;
+  color: white;
+  font-weight: bold;
+}
+.apply-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

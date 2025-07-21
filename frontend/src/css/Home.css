@@ -1,0 +1,92 @@
+.home {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fbff;
+}
+.tool-card-ui.v2 {
+  max-width: 300px;
+  width: 100%;
+  min-height: 440px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tool-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+
+.hero-section {
+  text-align: center;
+  padding: 40px 15px 30px;
+  background: linear-gradient(to bottom, #e5f0ff, #ffffff);
+  border-bottom: 1px solid #ccc;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.hero-section .highlight {
+  border-bottom: 4px solid #f59e0b;
+  color: #0f172a;
+}
+
+.hero-section p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  min-width: 240px;
+}
+
+.filters button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.filters button.active {
+  background: #6366f1;
+  color: #fff;
+  border-color: #6366f1;
+  font-weight: bold;
+}
+
+.tool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 30px 20px;
+}
+

@@ -1,0 +1,166 @@
+.tool-card-ui.v2 {
+  max-width: 300px;
+  width: 100%;
+  min-height: 440px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.tool-card-ui.v2:hover {
+  transform: translateY(-5px);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #facc15, #fbbf24);
+  color: #111;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-bottom-right-radius: 12px;
+  font-size: 14px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-tag {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #e5f3e9;
+  color: #22c55e;
+}
+.price-tag.paid { background: #fee2e2; color: #ef4444; }
+.price-tag.freemium { background: #fef3c7; color: #d97706; }
+.price-tag.free-trial { background: #ede9fe; color: #8b5cf6; }
+
+.bookmark-icon {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.rating-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
+.stars {
+  color: #facc15;
+  font-size: 14px;
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background: #f3f4f6;
+  border-radius: 50%;
+}
+.tool-title h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0;
+  color: #1e293b;
+}
+.verified {
+  color: #facc15;
+  font-size: 14px;
+  margin-left: 6px;
+}
+.underline {
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to right, #3b82f6, #fb923c);
+  border-radius: 6px;
+  margin-top: 3px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.tool-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-size: 12px;
+  background: #f1f5f9;
+  color: #111;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.visit-btn {
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 100px;
+}
+.visit-btn:hover {
+  background: #1d4ed8;
+}
+
+.clicks {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bookmark-icon {
+  font-size: 18px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bookmark-icon:hover {
+  color: #facc15;
+}
+
+.bookmark-icon svg {
+  pointer-events: none;
+}

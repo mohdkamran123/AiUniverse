@@ -1,0 +1,144 @@
+.admin-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.admin-heading {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.admin-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.admin-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  border-left: 5px solid #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.admin-card p {
+  margin: 0;
+  color: #777;
+}
+
+.logout-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+.admin-dashboard {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+}
+
+.admin-dashboard h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.stats {
+  background: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.user-table select {
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.user-table button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-table button:hover {
+  background-color: darkred;
+}
+.admin-dashboard {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.stats, .user-table, .tool-table {
+  margin-bottom: 2rem;
+}
+
+.user-table, .tool-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .tool-table th,
+.user-table td, .tool-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+select, input {
+  padding: 0.4rem;
+}
+
+button {
+  margin: 0 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.tool-form {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
