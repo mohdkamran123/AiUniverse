@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../css/ChatbotAuth.css';
 import { useNavigate } from 'react-router-dom';
 import BASE_URL from '../api';
+
 const Register = () => {
   const navigate = useNavigate();
 
@@ -12,7 +13,7 @@ const Register = () => {
   ]);
   const [step, setStep] = useState(1);
   const [input, setInput] = useState('');
-  const [formData, setFormData] = useState({ name: '', email: '', password: '', role: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [otpData, setOtpData] = useState({});
 
   const handleSubmit = async (e) => {
@@ -36,7 +37,7 @@ const Register = () => {
         setOtpData(res.data.tempData);
         setMessages([...nextMessages, {
           from: 'bot',
-          text: '📩 OTP sent to your email. What role do you want? (admin/user)'
+          text: '📩 OTP sent to your email. Please enter the OTP.'
         }]);
         setStep(4);
       } catch (err) {
@@ -44,21 +45,10 @@ const Register = () => {
         setMessages([...nextMessages, { from: 'bot', text: `❌ Error: ${msg}` }]);
       }
     } else if (step === 4) {
-      const role = input.toLowerCase();
-      if (role !== 'admin' && role !== 'user') {
-        setMessages([...nextMessages, { from: 'bot', text: '❌ Please enter either "admin" or "user".' }]);
-        return;
-      }
-      setFormData({ ...formData, role });
-      setMessages([...nextMessages, {
-        from: 'bot',
-        text: '✅ Almost done! Please enter the OTP sent to your email.'
-      }]);
-      setStep(5);
-    } else if (step === 5) {
       try {
         const res = await axios.post(`${BASE_URL}/auth/verify-registration`, {
           ...formData,
+          role: 'user',
           otp: input,
           originalOtp: otpData.otp,
           expiresAt: otpData.expiresAt
@@ -75,8 +65,7 @@ const Register = () => {
         }]);
 
         setTimeout(() => {
-          if (role === 'admin') navigate('/admin-dashboard');
-          else navigate('/user-dashboard');
+          navigate('/home');
         }, 1500);
       } catch (err) {
         const msg = err.response?.data?.message || 'Invalid or expired OTP';

@@ -15,6 +15,26 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+}
+
+.logout-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #d9363e;
+}
 
 .tool-card-grid {
   display: grid;

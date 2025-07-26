@@ -5,6 +5,8 @@ import '../css/Home.css';
 import CategoryToolList from '../components/CategoryToolList';
 import Nav from '../components/Nav';
 import BASE_URL from '../api';
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
   const [tools, setTools] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -14,6 +16,8 @@ const Home = () => {
     priceType: '',
     isVerified: null
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategories();
@@ -43,9 +47,25 @@ const Home = () => {
     if (e.key === 'Enter') fetchTools();
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/');
+  };
+
   return (
     <div className="home">
-      <Nav/>
+      
+
+      
+      {localStorage.getItem('token') && (
+        <div className="logout-container">
+          <button className="logout-button" onClick={handleLogout}>
+            🔓 Logout
+          </button>
+        </div>
+      )}
+
       <div className="hero-section">
         <h1>🤖 <span className="highlight">AI Tools Directory</span></h1>
         <p>Access the largest list of top-quality AI tools available on the web ★</p>
@@ -98,14 +118,13 @@ const Home = () => {
       </div>
 
       <div className="tool-card-grid">
-  {tools.map(tool => (
-    <ToolCard key={tool.id} tool={tool} />
-  ))}
-</div>
+        {tools.map(tool => (
+          <ToolCard key={tool.id} tool={tool} />
+        ))}
+      </div>
 
-       <CategoryToolList/>
+      <CategoryToolList />
     </div>
-   
   );
 };
 

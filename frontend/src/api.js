@@ -1,3 +1,3 @@
-const BASE_URL = "https://aiuniverse-1.onrender.com";
+const BASE_URL = "http://localhost:3000";
 
 export default BASE_URL;

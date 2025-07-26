@@ -1,5 +1,5 @@
 import express from 'express';
-import { runToolAI } from '../controller/ai.controller.js';
+import { runToolAI } from '../controller/ai.Controller.js';
 import { protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();

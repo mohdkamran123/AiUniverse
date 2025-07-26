@@ -34,7 +34,6 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// ✅ Traditional Register Controller (No OTP)
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -42,6 +41,13 @@ export const registerUser = async (req, res) => {
     const userExists = await User.findOne({ email });
     if (userExists)
       return res.status(400).json({ message: 'User already exists' });
+
+    // 🚫 Prevent multiple admins
+    if (role === 'admin') {
+      const existingAdmin = await User.findOne({ role: 'admin' });
+      if (existingAdmin)
+        return res.status(400).json({ message: 'Only one admin is allowed' });
+    }
 
     const user = await User.create({
       name,
@@ -63,6 +69,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 // ✅ STEP 1: Send OTP during Registration
 export const sendRegisterOTP = async (req, res) => {
@@ -75,10 +82,10 @@ export const sendRegisterOTP = async (req, res) => {
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 min expiry
 
-    // Send OTP to email
+   
     await sendOTPEmail(email, otp);
 
-    // ⚠️ In production, store temp user & OTP in Redis or DB (not in client)
+    
     res.status(200).json({
       message: 'OTP sent to email',
       tempData: { name, email, password, otp, expiresAt } // for demo purposes only
@@ -88,8 +95,6 @@ export const sendRegisterOTP = async (req, res) => {
   }
 };
 
-///////////////////////////////////////////////////////////////////////////////////////////
-// ✅ STEP 2: Verify OTP and Create User
 export const verifyRegisterOTP = async (req, res) => {
   try {
     const { name, email, password, otp, originalOtp, expiresAt, role } = req.body;
@@ -102,6 +107,13 @@ export const verifyRegisterOTP = async (req, res) => {
 
     if (new Date() > new Date(expiresAt))
       return res.status(400).json({ message: 'OTP expired' });
+
+    // 🚫 Prevent multiple admins
+    if (role === 'admin') {
+      const existingAdmin = await User.findOne({ role: 'admin' });
+      if (existingAdmin)
+        return res.status(400).json({ message: 'Only one admin is allowed' });
+    }
 
     const user = await User.create({
       name,
