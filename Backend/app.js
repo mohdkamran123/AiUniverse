@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Middlewares
 app.use(cors({
-  origin: 'http://localhost:3001', // Your React app
+  origin: 'https://aiuniverse-f.onrender.com', 
   credentials: true
 }));
 app.use(express.json());
